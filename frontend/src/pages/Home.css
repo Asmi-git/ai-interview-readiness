@@ -1,0 +1,87 @@
+.welcome-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-7);
+}
+
+.welcome-card__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--indigo);
+  margin-bottom: var(--space-2);
+}
+
+.welcome-card__title {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-4);
+}
+
+.welcome-card__body {
+  color: var(--slate-600);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  max-width: 60ch;
+  margin-bottom: var(--space-5);
+}
+
+.roadmap-title {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-4);
+}
+
+.roadmap-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.roadmap-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--slate-900);
+}
+
+.roadmap-list__badge {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.roadmap-list__badge--next {
+  background: var(--amber-bg);
+  color: var(--amber);
+}
+
+.roadmap-list__badge--planned {
+  background: var(--border);
+  color: var(--slate-600);
+}
+
+@media (max-width: 600px) {
+  .welcome-card {
+    padding: var(--space-5);
+  }
+  .welcome-card__title {
+    font-size: var(--text-2xl);
+  }
+  .roadmap-list__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+}

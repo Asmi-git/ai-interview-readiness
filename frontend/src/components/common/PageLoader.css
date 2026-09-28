@@ -1,0 +1,24 @@
+.page-loader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--slate-600);
+  font-size: var(--text-sm);
+  font-family: var(--font-mono);
+  padding: var(--space-6) 0;
+}
+
+.page-loader__spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  border-top-color: var(--indigo);
+  animation: page-loader-spin 0.7s linear infinite;
+}
+
+@keyframes page-loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

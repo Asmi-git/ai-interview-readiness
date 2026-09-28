@@ -1,0 +1,115 @@
+.interview-list__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.interview-list__empty {
+  text-align: center;
+  padding: var(--space-8) var(--space-6);
+}
+
+.interview-list__empty-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: var(--space-2);
+}
+
+.interview-list__empty-body {
+  color: var(--slate-600);
+  font-size: var(--text-sm);
+  max-width: 46ch;
+  margin: 0 auto var(--space-5);
+  line-height: 1.6;
+}
+
+.interview-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.interview-card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.interview-card:hover {
+  border-color: var(--indigo);
+  transform: translateY(-1px);
+}
+
+.interview-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+.interview-card__company {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+
+.interview-card__badge {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.interview-card__badge--selected {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.interview-card__badge--rejected {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.interview-card__badge--pending {
+  background: var(--amber-bg);
+  color: var(--amber);
+}
+
+.interview-card__meta {
+  font-size: var(--text-sm);
+  color: var(--slate-600);
+  margin-bottom: var(--space-3);
+}
+
+.interview-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.interview-card__tag {
+  font-size: var(--text-xs);
+  color: var(--slate-600);
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+@media (max-width: 600px) {
+  .interview-list__header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

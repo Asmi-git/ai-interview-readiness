@@ -1,0 +1,67 @@
+/**
+ * Design tokens for the Interview Readiness platform ("Prepwise").
+ * Every future page/component should pull from these variables rather
+ * than hardcoding new colors or sizes, to keep the whole product consistent.
+ */
+:root {
+  /* ---- Color: brand ---- */
+  --ink: #10152b;          /* near-black navy — brand panels, headers */
+  --ink-soft: #1c2340;     /* lighter navy for gradients/panels on ink bg */
+  --indigo: #4b3fe0;       /* primary action color */
+  --indigo-strong: #3a2fc4;/* hover/active state for primary actions */
+  --violet-soft: #8b7cff;  /* secondary accent, highlights, links on dark bg */
+
+  /* ---- Color: surfaces & text ---- */
+  --paper: #f8f8fc;        /* app background */
+  --surface: #ffffff;      /* card/panel background */
+  --border: #e4e4ee;       /* hairline borders */
+  --border-strong: #cfd0e0;
+
+  --slate-900: #1c2033;    /* primary text on light surfaces */
+  --slate-600: #4b5163;    /* secondary body text */
+  --slate-400: #8a8fa3;    /* placeholders, muted labels */
+  --on-ink: #f4f4fb;       /* text on navy backgrounds */
+  --on-ink-muted: #a9adc9; /* secondary text on navy backgrounds */
+
+  /* ---- Color: semantic ---- */
+  --success: #1c9c6b;
+  --success-bg: #e8f7f1;
+  --amber: #c77d22;
+  --amber-bg: #fbf1e2;
+  --danger: #d64545;
+  --danger-bg: #fdecec;
+
+  /* ---- Type ---- */
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+
+  /* ---- Spacing scale ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* ---- Shape & elevation ---- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 2px rgba(16, 21, 43, 0.06);
+  --shadow-md: 0 8px 24px rgba(16, 21, 43, 0.08);
+  --shadow-lg: 0 16px 48px rgba(16, 21, 43, 0.14);
+
+  --transition-fast: 140ms ease;
+  --transition-base: 220ms ease;
+}

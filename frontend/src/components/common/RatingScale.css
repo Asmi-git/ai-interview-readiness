@@ -1,0 +1,36 @@
+.rating-scale {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.rating-scale__btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--slate-600);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.rating-scale__btn:hover {
+  border-color: var(--indigo);
+  color: var(--indigo);
+}
+
+.rating-scale__btn--selected {
+  background: var(--indigo);
+  border-color: var(--indigo);
+  color: #ffffff;
+}
+
+.rating-scale__hint {
+  font-size: var(--text-xs);
+  color: var(--slate-600);
+  margin-left: var(--space-2);
+}

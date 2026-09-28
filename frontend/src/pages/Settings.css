@@ -1,0 +1,9 @@
+.settings-account-card {
+  margin-bottom: var(--space-6);
+}
+
+.settings-account-email {
+  font-size: var(--text-sm);
+  color: var(--slate-900);
+  font-family: var(--font-mono);
+}

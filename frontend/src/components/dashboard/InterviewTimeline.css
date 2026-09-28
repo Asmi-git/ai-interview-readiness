@@ -1,0 +1,66 @@
+.interview-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.interview-timeline__row {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.interview-timeline__rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.interview-timeline__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--indigo);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.interview-timeline__line {
+  width: 2px;
+  flex: 1;
+  background: var(--border);
+  margin: 2px 0;
+}
+
+.interview-timeline__content {
+  flex: 1;
+  padding-bottom: var(--space-5);
+  min-width: 0;
+}
+
+.interview-timeline__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: 2px;
+}
+
+.interview-timeline__company {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: var(--text-sm);
+}
+
+.interview-timeline__date {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--slate-600);
+  margin-bottom: var(--space-2);
+}
+
+.interview-timeline__none {
+  font-size: var(--text-xs);
+  color: var(--slate-600);
+  font-style: italic;
+}

@@ -1,0 +1,47 @@
+.page-header {
+  margin-bottom: var(--space-6);
+}
+
+.page-header__title {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-2);
+}
+
+.page-header__subtitle {
+  color: var(--slate-600);
+  font-size: var(--text-sm);
+  max-width: 60ch;
+}
+
+.page-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 600px) {
+  .page-card {
+    padding: var(--space-5);
+  }
+}
+
+.skill-section-title {
+  font-size: var(--text-base);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--slate-600);
+  margin-bottom: var(--space-4);
+}
+
+.skill-section-title--spaced {
+  margin-top: var(--space-6);
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}

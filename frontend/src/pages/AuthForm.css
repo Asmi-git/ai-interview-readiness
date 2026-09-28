@@ -1,0 +1,25 @@
+.auth-form__header {
+  margin-bottom: var(--space-6);
+}
+
+.auth-form__title {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+}
+
+.auth-form__meta {
+  margin-top: var(--space-2);
+  color: var(--slate-600);
+  font-size: var(--text-sm);
+}
+
+.auth-form__footer {
+  margin-top: var(--space-5);
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--slate-600);
+}
+
+.auth-form__footer a {
+  font-weight: 600;
+}

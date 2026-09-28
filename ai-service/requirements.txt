@@ -1,0 +1,25 @@
+# Core service — no heavy ML dependencies required to run.
+fastapi>=0.115
+uvicorn[standard]>=0.30
+scikit-learn>=1.5
+numpy>=1.26
+pydantic>=2.8
+
+# --- Optional: higher-quality semantic embeddings ---
+# The default embedding backend (TF-IDF + Latent Semantic Analysis, see
+# app/embeddings.py) is pure scikit-learn: no model download, works
+# instantly, and is what this project runs with out of the box.
+#
+# For better semantic matching (e.g. correctly linking "I got nervous
+# answering HR questions" with "I lacked confidence while speaking" even
+# though they share almost no words), you can optionally upgrade to a real
+# sentence embedding model. This requires PyTorch, which is a multi-GB
+# install — skip this unless you have the disk space and want the upgrade.
+#
+# To enable:
+#   1. pip install sentence-transformers
+#   2. Set EMBEDDING_BACKEND=sentence-transformers in ai-service/.env
+#   3. Restart the service (the model, all-MiniLM-L6-v2, ~80MB, downloads
+#      once on first use and is cached locally after that)
+#
+# sentence-transformers>=3.0

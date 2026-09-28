@@ -1,0 +1,28 @@
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.checkbox-group__tag {
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--slate-600);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.checkbox-group__tag:hover {
+  border-color: var(--indigo);
+  color: var(--indigo);
+}
+
+.checkbox-group__tag--checked {
+  background: var(--indigo);
+  border-color: var(--indigo);
+  color: #ffffff;
+}

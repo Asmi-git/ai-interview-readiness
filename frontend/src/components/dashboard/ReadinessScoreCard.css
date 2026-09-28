@@ -1,0 +1,115 @@
+.readiness-card {
+  margin-bottom: var(--space-7);
+}
+
+.readiness-card__top {
+  margin-bottom: var(--space-5);
+}
+
+.readiness-card__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--slate-600);
+  margin-bottom: var(--space-1);
+}
+
+.readiness-card__score {
+  font-family: var(--font-mono);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--indigo);
+  line-height: 1;
+}
+
+.readiness-card__breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.readiness-card__row {
+  display: grid;
+  grid-template-columns: 160px 1fr 48px;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.readiness-card__row-label {
+  font-size: var(--text-sm);
+  color: var(--slate-600);
+}
+
+.readiness-card__bar-track {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.readiness-card__bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--indigo), var(--violet-soft));
+}
+
+.readiness-card__row-value {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--slate-900);
+  text-align: right;
+}
+
+.readiness-card__row-unavailable {
+  grid-column: 2 / span 2;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--slate-600);
+}
+
+.readiness-card__penalty-note {
+  margin-top: var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--amber);
+}
+
+.readiness-card__reasons {
+  margin: var(--space-4) 0 0;
+  padding-left: var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--slate-600);
+  line-height: 1.6;
+}
+
+.readiness-card__reasons--secondary {
+  margin-top: var(--space-3);
+}
+
+.readiness-card--empty {
+  text-align: left;
+}
+
+.readiness-card__empty-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: var(--space-3);
+}
+
+.readiness-card__cta {
+  display: inline-block;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 600px) {
+  .readiness-card__row {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+  .readiness-card__row-value {
+    text-align: left;
+  }
+}
