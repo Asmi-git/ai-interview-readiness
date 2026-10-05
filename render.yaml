@@ -1,0 +1,38 @@
+services:
+  # ─── Node/Express Backend ───────────────────────────────────────────────────
+  - type: web
+    name: prepwise-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000          # Render assigns its own port; this is just a fallback
+      - key: MONGO_URI
+        sync: false           # Set this manually in the Render dashboard
+      - key: JWT_SECRET
+        generateValue: true   # Render auto-generates a secure random value
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: COOKIE_NAME
+        value: irp_session
+      - key: CLIENT_ORIGIN
+        sync: false           # Set to your Vercel frontend URL after deploying frontend
+      - key: AI_SERVICE_URL
+        sync: false           # Set to your Render AI service URL after it's deployed
+
+  # ─── Python FastAPI AI Microservice ─────────────────────────────────────────
+  - type: web
+    name: prepwise-ai-service
+    runtime: python
+    rootDir: ai-service
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: EMBEDDING_BACKEND
+        value: tfidf
+      - key: EMBEDDING_MODEL
+        value: all-MiniLM-L6-v2

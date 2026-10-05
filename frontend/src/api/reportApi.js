@@ -1,15 +1,25 @@
 /**
- * Downloads the readiness report PDF. Uses the browser's native download
- * mechanism (a temporary link) rather than fetch+blob — since the session
- * cookie is httpOnly, a direct navigation to this same-origin URL already
- * sends it automatically, and the backend's Content-Disposition header
- * triggers the browser's save dialog on its own.
+ * Downloads the readiness report PDF.
+ *
+ * In local dev, the Vite proxy makes /api/... same-origin so a plain anchor
+ * link works fine. In production (Vercel frontend → Render backend) the two
+ * are on different origins, so we use fetch with credentials:'include' to
+ * send the httpOnly cookie, then create an object URL for the download.
  */
-export function downloadReadinessReport() {
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
+
+export async function downloadReadinessReport() {
+  const res = await fetch(`${API_BASE}/api/reports/readiness`, {
+    credentials: 'include',
+  });
+  if (!res.ok) throw new Error('Failed to download report.');
+  const blob = await res.blob();
+  const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
-  link.href = '/api/reports/readiness';
+  link.href = url;
   link.download = 'prepwise-readiness-report.pdf';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+  URL.revokeObjectURL(url);
 }

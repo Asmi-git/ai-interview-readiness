@@ -18,6 +18,13 @@ const { errorHandler, notFound } = require('./middleware/errorHandler');
 function createApp() {
   const app = express();
 
+  // Render (and most cloud platforms) sit behind a reverse proxy.
+  // Without this, Express sees HTTP instead of HTTPS → secure cookies are
+  // never set and req.protocol is wrong.
+  if (process.env.NODE_ENV === 'production') {
+    app.set('trust proxy', 1);
+  }
+
   app.use(
     cors({
       origin: process.env.CLIENT_ORIGIN || 'http://localhost:3000',

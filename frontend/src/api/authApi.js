@@ -1,4 +1,7 @@
-const BASE_URL = '/api/auth';
+// In production (Vercel), VITE_API_BASE_URL is the Render backend URL.
+// In local dev it is empty — the Vite proxy forwards /api/... to localhost:5000.
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
+const BASE_URL = `${API_BASE}/api/auth`;
 
 /**
  * Thin wrapper around fetch for the auth endpoints.
